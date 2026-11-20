@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="多源漏洞、PoC、补丁和评测任务：从公开安全信息到可信数据与可执行评测。">
+<title>VulnData · 安全研究数据资源</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><a class="brand" href="#">◈ <span>VulnData<span class="brand-dot">.</span></span></a><nav aria-label="主导航"><a href="#resources">数据资源</a><a href="#improvements">提升成果</a><a href="#cases">典型案例</a><a href="#adoption">外部采纳 <span>↗</span></a></nav></header>
+<main>
+<section class="hero"><h1>安全研究数据资源<br><span>漏洞、PoC、补丁与评测</span></h1><p class="intro">汇集多源漏洞、PoC 和补丁，经过清洗、补全与验证，形成可追溯的数据集。<br>基于真实漏洞构建可执行、可判分的任务，用于评测模型与工具的安全能力。</p><div class="hero-actions"><a class="button primary" href="#resources">数据概览 <span>↓</span></a><a class="button secondary" href="#improvements">处理效果 ↗</a></div><div class="orb" aria-hidden="true"><div></div><span>DATA<br><b>→ EVIDENCE</b></span></div></section>
+<section class="metrics" aria-label="数据规模"><article><small>漏洞条目记录</small><strong>130<span>万+</span></strong><p>16 个来源 · 约 44 万个漏洞</p></article><article><small>多源 PoC 报告</small><strong>51<span>万+</span></strong><p>13 个来源 · 覆盖 49,016 个 CVE</p></article><article><small>安全补丁记录</small><strong>4<span>万+</span></strong><p>关联约 3 万个 CVE · 39,659 条补丁</p></article><article><small>可执行评测任务</small><strong>364</strong><p>1999—2026 年 · 隔离环境与评分器</p></article></section>
+<section id="resources"><div class="section-top"><div><h2>数据资源</h2></div></div><div class="group-label">高质量数据<div></div></div><div class="resource-grid">
+<article class="resource"><h3>漏洞数据</h3><p>对齐多源字段，验证冲突信息，保留纠正依据。</p><a href="#cases" data-case-link="vuln">查看版本纠正案例 ↗</a></article>
+<article class="resource"><h3>PoC 数据</h3><p>关联 CVE，补齐版本、环境与触发步骤。</p><a href="#cases" data-case-link="poc">查看要素补全案例 ↗</a></article>
+<article class="resource"><h3>Patch 数据</h3><p>补齐同一漏洞在不同提交、不同分支中的修复。</p><a href="#cases" data-case-link="patch">查看多补丁案例 ↗</a></article></div>
+<div class="benchmark"><div><h3>高价值数据：漏洞评测任务</h3><p>提供题面、隔离环境与评分器，评测工具的漏洞定位和 PoC 构造能力。</p></div><a class="benchmark-number" href="#cases" data-case-link="bench"><strong>364<span>题</span></strong><span>探索评测任务 ↗</span></a></div></section>
+<section id="improvements"><div class="section-top"><div><h2>处理前后</h2></div></div><div class="improvement-grid">
+<article class="improvement"><h3>漏洞字段整合</h3><div class="gain"><strong>14 → 22</strong><span>平均字段数 → 整合后字段数</span></div><div class="gain-caption">补齐跨来源互补信息</div><div class="metric-label">正确率</div><div class="change">78.2% <span>→</span> <b>93.7%</b></div><div class="bar"><span style="width:78.2%"></span><b style="width:93.7%"></b></div><p>正确率增加 <b>15.5 个百分点</b></p></article>
+<article class="improvement"><h3>PoC 信息补全</h3><div class="gain"><strong>86,595</strong><span>份报告完成补全</span></div><div class="gain-caption">从 CVE 条目补入 168,276 个要素</div><div class="metric-label">复现率</div><div class="change">28.0% <span>→</span> <b>78.7%</b></div><div class="bar"><span style="width:28%"></span><b style="width:78.7%"></b></div><p>复现率增加 <b>50.7 个百分点</b><br>增强含融合、推断、诊断与环境适配</p></article>
+<article class="improvement"><h3>补丁补全</h3><div class="gain"><strong>+335</strong><span>条补丁记录</span></div><div class="gain-caption">300 个 CVE 提升子集 · 数量增加 46.6%</div><div class="metric-label">补丁数</div><div class="change">719 <span>→</span> <b>1,054</b></div><div class="bar"><span style="width:68.2%"></span><b style="width:100%"></b></div><p>平均每个 CVE 补丁数 <b>2.40 → 3.51</b></p></article></div></section>
+<section id="cases"><div class="section-top"><div><h2>典型案例</h2></div></div><div class="tabs" role="tablist" aria-label="案例类型"><button id="tab-vuln" role="tab" aria-controls="case-panel" aria-selected="true" data-case="vuln">漏洞数据</button><button id="tab-poc" role="tab" aria-controls="case-panel" aria-selected="false" data-case="poc">PoC 数据</button><button id="tab-patch" role="tab" aria-controls="case-panel" aria-selected="false" data-case="patch">Patch 数据</button><button id="tab-bench" role="tab" aria-controls="case-panel" aria-selected="false" data-case="bench">评测任务</button></div><div id="case-panel" role="tabpanel" aria-labelledby="tab-vuln" tabindex="0"></div></section>
+
+<section id="adoption"><div class="section-top"><div><h2>修正结果已被官方漏洞库采纳</h2></div></div><div class="adoption-grid">
+<article><span class="adoption-kind">PoC–CVE 关联</span><h3>NVD</h3><strong>15<small> / 20</small></strong><p>15 项关联获采纳，共提交 20 项。</p><div class="adoption-meter"><i style="width:75%"></i></div></article>
+<article><span class="adoption-kind">受影响版本补报</span><h3>GitHub Advisory Database</h3><strong>62<small> / 124</small></strong><p>62 个版本获采纳，共补报 124 个。</p><div class="adoption-meter"><i style="width:50%"></i></div></article>
+<article><span class="adoption-kind">漏洞情报纠错</span><h3>公开漏洞数据库</h3><strong>40<small> 项接受</small></strong><p>80 项纠错提交，46 项获回应，40 项获接受。</p><div class="adoption-meter"><i style="width:50%"></i></div></article>
+<article><span class="adoption-kind">不完整修复确认</span><h3>AVideo</h3><strong>2<small> 处确认</small></strong><p>维护方确认两处不完整修复。</p></article>
+<article><span class="adoption-kind">新漏洞编号</span><h3>OpenAM</h3><strong class="cve-number">CVE-2026-62263</strong><p>发现不完整修复，获分配 CVE 编号。</p></article>
+</div><p class="adoption-note">部分采纳结果，统计截至研究材料记录时点。</p></section>
+</main><footer><a class="brand" href="#">◈ VulnData.</a><span>研究数据展示 · 2026</span></footer><script src="app.js"></script></body></html>

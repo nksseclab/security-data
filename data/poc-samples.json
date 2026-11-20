@@ -1,0 +1,95 @@
+[
+  {
+    "poc_id": "exploitdb-revive-3.2.2-open-redirect",
+    "source": "Exploit-DB",
+    "cve_id_raw": null,
+    "raw_excerpt": "Revive Adserver 3.2.2 - Open Redirect | Date: 25/01/2016 | Version: 3.2.2 | Author: Ashiyane Digital Security Team | CWE: CWE-601 | PoC: http://localhost/www/delivery/ck.php?oadest=http://ehsansec.ir/",
+    "processed": {
+      "title": "Revive Adserver 3.2.2 - Open Redirect",
+      "vuln_type": "URL Redirection to Untrusted Site (Open Redirect)",
+      "key_function": [
+        "www/delivery/ck.php",
+        "oadest"
+      ],
+      "software_version": {
+        "product": "Revive Adserver",
+        "version": [
+          3,
+          2,
+          2
+        ]
+      },
+      "test_platform": null,
+      "reference": [
+        "ehsansec.ir/advisories/revive-ads-redirect.txt"
+      ],
+      "author": "Ashiyane Digital Security Team",
+      "publish_time": "2016-01-25",
+      "linked_cve": {
+        "cve_id": "CVE-2021-22873",
+        "method": "RESYNC (TF-IDF + KG candidate screening, LLM re-ranking)",
+        "verified": "manual reproduction; reported to CNA (HackerOne), record updated"
+      }
+    },
+    "improvement": "无 CVE 编号的孤立报告 → 关联到 CVE-2021-22873，可按 CVE 检索并用于确认影响范围"
+  },
+  {
+    "poc_id": "seebug-cve-2017-11151",
+    "source": "Seebug",
+    "cve_id_raw": "CVE-2017-11151",
+    "raw_excerpt": "Synology Photo Station 6.7.3-3432 / 6.3-2967 - Remote Code Execution | Source: https://security.szurek.pl/... (仅有 Title 与 Reference)",
+    "processed": {
+      "title": "Synology Photo Station 6.7.3-3432 / 6.3-2967 - Remote Code Execution",
+      "software_version": {
+        "product": "Synology Photo Station",
+        "versions": [
+          "6.7.3-3432",
+          "6.3-2967"
+        ],
+        "filled_from": "CVE entry (CPE)"
+      },
+      "test_platform": {
+        "value": "Hardware",
+        "filled_from": "Exploit-DB PoC of same CVE"
+      },
+      "trigger_step": {
+        "value": "上传任意文件到指定目录 …",
+        "filled_from": "Exploit-DB PoC of same CVE"
+      },
+      "verification_oracle": {
+        "value": "uid=138862(PhotoStation) gid=138862(PhotoStation)",
+        "filled_from": "Exploit-DB PoC of same CVE"
+      },
+      "author": {
+        "value": "Kacper Szurek",
+        "filled_from": "Exploit-DB / Packet Storm"
+      },
+      "publish_time": "2017-08-08",
+      "reference": [
+        "security.szurek.pl/synology-photo-station-673-3432-remote-code-execution.html",
+        "blogs.securiteam.com/index.php/archives/3356"
+      ]
+    },
+    "improvement": "8 个关键要素中原有 2 个 → 补全后 8 个齐全，可按报告直接复现"
+  },
+  {
+    "poc_id": "multi-source-cve-2014-0160",
+    "source": "多个平台（同一 CVE 共 39 份报告）",
+    "cve_id_raw": "CVE-2014-0160",
+    "raw_excerpt": "报告1：仅含 OpenSSL 源码链接与 Python PoC 代码；报告2：含编译运行命令、测试平台与版本，但无完整代码",
+    "processed": {
+      "test_platform": "ArchLinux x86_64 gcc 4.8.2",
+      "software_version": "20140206 w/OpenSSL 1.0.1g",
+      "trigger_step": [
+        "gcc -lssl -lssl3 -lcrypto heartbleed.c -o heartbleed",
+        "./heartbleed -s <target> -p 443 -f out -t 1"
+      ],
+      "reference": [
+        "http://www.openssl.org/",
+        "http://www.openssl.org/source/openssl-1.0.1f.tar.gz"
+      ],
+      "poc_code": "(来自报告1)"
+    },
+    "improvement": "单份报告都无法直接复现 → 融合后得到环境、版本、步骤、代码齐全的复现记录"
+  }
+]
