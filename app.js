@@ -12,9 +12,35 @@ const concrete = {
   bench: {before:{cve:'CVE-2018-8740',project:'SQLite',inputs:['affected source','fixed source']},after:{bench:'bench-0282',submission:'/app/poc',network_mode:'no-network',oracle_repeats:5,success:'affected: fatal signal; fixed: survives',negative_controls:['empty-file','benign-db']},note:'评测样例的评分契约节选：同时验证受影响与修复构建，参考解重复运行并检查负对照。'}
 };
 const escapeHTML=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-function selectCase(key, focus=false){const c=cases[key];document.querySelectorAll('[data-case]').forEach(b=>{const active=b.dataset.case===key;b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;if(active&&focus)b.focus()});panel.setAttribute('aria-labelledby','tab-'+key);panel.innerHTML=`<div class="case-heading"><h3>${c.title}</h3><span>${c.label}</span></div><p class="case-description">${c.description}</p><div class="comparison"><div><small>BEFORE / 加工前</small><p>${c.before}</p></div><div class="after"><small>AFTER / 加工后</small><p>${c.after}</p></div></div>`;}
-const originalSelectCase=selectCase;
-selectCase=function(key,focus=false){originalSelectCase(key,focus);const data=concrete[key];const block=document.createElement('details');block.className='concrete-data';block.innerHTML=`<summary>查看具体字段</summary><div class="code-comparison"><div><small>加工前</small><pre>${escapeHTML(JSON.stringify(data.before,null,2))}</pre></div><div><small>加工后</small><pre>${escapeHTML(JSON.stringify(data.after,null,2))}</pre></div></div>`;panel.appendChild(block)};
+const compactText = (value) => value.replace(/(?<=[\u3400-\u9fff])[ \t]+(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])[ \t]+(?=[\u3400-\u9fff])/g, "");
+function highlightJSON(data) {
+  const json = escapeHTML(JSON.stringify(data, null, 2));
+  return json.replace(/"(?:\\.|[^"\\])*"(?=\s*:)|"(?:\\.|[^"\\])*"|-?\d+(?:\.\d+)?(?:e[+-]?\d+)?|true|false|null/gi, (token, offset) => {
+    let type = 'literal';
+    if (token.startsWith('"')) {
+      type = /^\s*:/.test(json.slice(offset + token.length)) ? 'key' : 'string';
+    } else if (/^-?\d/.test(token)) {
+      type = 'number';
+    }
+    return `<span class="json-${type}">${token}</span>`;
+  });
+}
+
+function renderCodeSample(label, data) {
+  return `<div class="code-sample">
+    <div class="code-header"><h5>${label}</h5><span>JSON</span></div>
+    <pre tabindex="0" aria-label="${label} JSON"><code>${highlightJSON(data)}</code></pre>
+  </div>`;
+}
+
+function selectCase(key, focus=false){const c=cases[key];document.querySelectorAll('[data-case]').forEach(b=>{const active=b.dataset.case===key;b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;if(active&&focus)b.focus()});panel.setAttribute('aria-labelledby','tab-'+key);panel.innerHTML=`<div class="case-heading"><h3>${compactText(c.title)}</h3><span>${compactText(c.label)}</span></div><p class="case-description">${compactText(c.description)}</p><div class="comparison"><div><small>BEFORE / 加工前</small><p>${compactText(c.before)}</p></div><div class="after"><small>AFTER / 加工后</small><p>${compactText(c.after)}</p></div></div>
+  <section class="concrete-data" aria-labelledby="case-fields-title">
+    <h4 id="case-fields-title">具体字段</h4>
+    <div class="code-comparison">
+      ${renderCodeSample("加工前", concrete[key].before)}
+      ${renderCodeSample("加工后", concrete[key].after)}
+    </div>
+  </section>`;}
 document.querySelectorAll('[data-case]').forEach((button,index,buttons)=>{button.addEventListener('click',()=>selectCase(button.dataset.case));button.addEventListener('keydown',e=>{let next;if(e.key==='ArrowRight')next=(index+1)%buttons.length;if(e.key==='ArrowLeft')next=(index-1+buttons.length)%buttons.length;if(e.key==='Home')next=0;if(e.key==='End')next=buttons.length-1;if(next!==undefined){e.preventDefault();selectCase(buttons[next].dataset.case,true)}})});
 document.querySelectorAll('[data-case-link]').forEach(a=>a.addEventListener('click',()=>selectCase(a.dataset.caseLink)));
 selectCase('vuln');
