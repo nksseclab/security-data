@@ -204,3 +204,13 @@ h2 { border-bottom-color: #aabfb7; }
 .json-string { color: #b0e9bc; }
 .json-number { color: #ffce99; }
 .json-literal { color: #e5bffd; }
+
+
+/* Second overview row. */
+.metrics.metrics-detail{grid-template-columns:repeat(5,minmax(0,1fr));margin-top:20px}
+.metrics-detail article{min-width:0;padding-left:18px;padding-right:18px}
+.metrics-detail small{font-size:15px}
+.metrics-detail strong{font-size:30px}
+.metrics-detail p{font-size:12px;line-height:1.7;white-space:nowrap}
+@media(max-width:1050px){.metrics.metrics-detail{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:25px}.metrics-detail p{white-space:normal}}
+@media(max-width:760px){.metrics.metrics-detail{grid-template-columns:repeat(2,minmax(0,1fr))}.metrics-detail small{font-size:14px}.metrics-detail strong{font-size:27px}}
