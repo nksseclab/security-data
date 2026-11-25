@@ -235,3 +235,5 @@ h2 { border-bottom-color: #aabfb7; }
 @media(max-width:600px){.metrics.metrics-detail{grid-template-columns:repeat(2,minmax(0,1fr))}.metrics-detail article:not(:nth-child(3n + 1)){border-left:0}.metrics-detail article:nth-child(even){border-left:1px solid var(--line)}.metrics-detail small{white-space:normal}}
 
 .header-projects{display:flex;align-items:baseline;flex-wrap:wrap;gap:.35rem 1.25rem}.header-projects>a{text-decoration:none}.header-projects>a:hover{text-decoration:underline}
+
+.header-projects>a,.header-projects>a.brand{font-size:1rem;font-weight:700;line-height:inherit;color:var(--link);letter-spacing:normal;text-decoration:none}.header-projects>a:hover{color:#0b304f;text-decoration:underline}
