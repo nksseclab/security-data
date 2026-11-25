@@ -233,3 +233,5 @@ h2 { border-bottom-color: #aabfb7; }
 .metrics-detail p{font-size:.875rem;line-height:1.7;white-space:normal}
 @media(max-width:900px){.metrics.metrics-detail{grid-template-columns:repeat(3,minmax(0,1fr))}.metrics-detail article{border-left:0}.metrics-detail article:not(:nth-child(3n + 1)){border-left:1px solid var(--line)}}
 @media(max-width:600px){.metrics.metrics-detail{grid-template-columns:repeat(2,minmax(0,1fr))}.metrics-detail article:not(:nth-child(3n + 1)){border-left:0}.metrics-detail article:nth-child(even){border-left:1px solid var(--line)}.metrics-detail small{white-space:normal}}
+
+.header-projects{display:flex;align-items:baseline;flex-wrap:wrap;gap:.35rem 1.25rem}.header-projects>a{text-decoration:none}.header-projects>a:hover{text-decoration:underline}
