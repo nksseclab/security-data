@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="多源漏洞、PoC、补丁和评测任务：从公开安全信息到可信数据与可执行评测。">
-<title>NKSSecLab漏洞数据资源平台</title><link rel="stylesheet" href="style.css?v=20261124-1">
+<title>NKSSecLab漏洞数据资源平台</title><link rel="stylesheet" href="style.css?v=20261125-2">
 </head>
 <body>
-<header id="top"><a class="brand" href="#top">NKSSecLab</a><nav aria-label="主导航"><a href="#cases">典型案例</a><a href="#adoption">外部采纳</a></nav></header>
+<header id="top"><a class="brand" href="https://nksseclab.github.io/">NKSSecLab</a><nav aria-label="主导航"><a href="#cases">典型案例</a><a href="#adoption">外部采纳</a><a href="#publications">数据支撑论文</a></nav></header>
 <main>
 <section class="hero"><h1>高质量与高价值漏洞数据资源</h1><p class="subtitle">漏洞、PoC/Exp、补丁与大模型评测</p><p class="intro">1. 经过多源采集、信息补全与正确性验证，形成高质量漏洞数据<br>2. 真实漏洞构建可执行、可判分任务，评测形成高价值训练数据</p><div class="hero-links"><a class="hero-primary" href="#cases">查看典型案例</a></div></section>
 <section class="overview" aria-labelledby="overview-title"><h2 id="overview-title">数据概览</h2><div class="metrics"><article><small>漏洞条目记录</small><strong>130万+</strong><p>16个来源 · 约44万个漏洞</p></article><article><small>多源PoC/Exp报告</small><strong>50万+</strong><p>13个来源 · 覆盖49,681个漏洞</p></article><article><small>补丁记录</small><strong>4万+</strong><p>关联3万个CVE · 16k条多补丁类型</p></article><article><small>评测题目</small><strong>364</strong><p>1999-2026年 · 隔离环境与轨迹</p></article></div><div class="metrics metrics-detail" aria-label="漏洞关联统计"><article><small>有 PoC 的漏洞</small><strong>49,681</strong></article><article><small>有补丁的漏洞</small><strong>48,632</strong></article><article><small>有补丁且有 PoC</small><strong>6,604</strong></article><article><small>有补丁但无 PoC</small><strong>42,028</strong><p>2011–2026 年：41,506 个</p></article><article><small>有补丁且属复杂 PoC</small><strong>1,896</strong><p>2011–2026 年：1,873 个</p></article></div></section>
@@ -17,4 +17,56 @@
 <article><span class="adoption-kind">受影响版本补报</span><h3>GitHub Advisory Database</h3><strong>62<small>个版本获采纳</small></strong></article>
 <article><span class="adoption-kind">漏洞情报纠错</span><h3>公开漏洞数据库</h3><strong>40<small>项纠错获接收</small></strong></article>
 </div><p class="adoption-note">部分采纳结果，统计截至研究材料记录时点。</p></section>
-</main><footer><a href="#top">NKSSecLab</a><span>研究数据展示 · 2026</span></footer><script src="app.js"></script></body></html>
+<section id="publications" aria-labelledby="publications-title">
+  <div class="section-top"><h2 id="publications-title">数据支撑论文</h2></div>
+  <ul class="publication-list" role="list">
+    <li>
+      <h3>Synchronizing Key Aspects: Enhancing Vulnerability PoC Reports from Multiple Sources</h3>
+      <p>Wenjing Dang, Lvye Zhang, Lingxiao Wang, Kaixuan Li, Mengyao Zhao, Xiaohong Li, and <strong>Sen Chen*</strong></p>
+      <p><strong>TIFS 2026, CCF-A</strong> · <a href="https://sen-chen.github.io/pdf/J24-TIFS2026-Synchronizing%20Key%20Aspects%20Enhancing%20Vulnerability%20PoC%20Reports%20from%20Multiple%20Sources.pdf">PDF ↗</a></p>
+    </li>
+    <li>
+      <h3>Mind the Data: A Measurement Study on Public Multi-Source Vulnerability Data</h3>
+      <p>Yuxin Zhang, <strong>Sen Chen*</strong>, Chengwei Liu, Lingling Fan, <strong>Zheli Liu</strong>, Yang Liu, and Xiaohong Li</p>
+      <p><strong>TOSEM 2026, CCF-A</strong> · <em>PDF forthcoming</em></p>
+    </li>
+    <!-- <li>
+      <h3>Vulnerability Proof-of-Concepts in Software Supply Chain: Real-World Usage Scenarios from the Perspective of Migration</h3>
+      <p>Wenjing Dang, Xiaohong Li, and <strong>Sen Chen*</strong></p>
+      <p><strong>SWGeno 2026, CCF-A Workshop</strong> · <a href="https://sen-chen.github.io/pdf/C64-SWGeno2026-Vulnerability%20Proof-of-Concepts%20in%20Software%20Supply%20Chain%20Real-World%20Usage%20Scenarios%20from%20the%20Perspective%20of%20Migration.pdf">PDF ↗</a></p>
+    </li> -->
+    <li>
+      <h3>One Is Not Enough: The Untold Story of Multiple Security Patches for One Vulnerability</h3>
+      <p>Fangyuan Zhang, Lyuye Zhang, Lingling Fan, Chengwei Liu, Yinan Li, Liang Huang, Yang Liu, <strong>Zheli Liu</strong>, and <strong>Sen Chen</strong></p>
+      <p><strong>ASE 2026, CCF-A</strong> · <a href="https://sen-chen.github.io/pdf/C66-ASE2026-One%20Is%20Not%20Enough%20The%20Untold%20Story%20of%20Multiple%20Security%20Patches%20for%20One%20Vulnerability.pdf">PDF ↗</a></p>
+    </li>
+    <!-- <li>
+      <h3>Real-World Usability of Vulnerability Proof-of-Concepts: A Comprehensive Study</h3>
+      <p>Wenjing Dang, Kaixuan Li, <strong>Sen Chen*</strong>, Zhenwei Zhuo, Lyuye Zhang, and <strong>Zheli Liu</strong></p>
+      <p><strong>Preprint, 2025</strong> · <a href="https://arxiv.org/abs/2510.18448">arXiv ↗</a></p>
+    </li> -->
+    <!-- <li>
+      <h3>A Systematic Study on Generating Web Vulnerability Proof-of-Concepts Using Large Language Models</h3>
+      <p>Mengyao Zhao, Kaixuan Li, Lyuye Zhang, Wenjing Dang, Chenggong Ding, <strong>Sen Chen*</strong>, and <strong>Zheli Liu</strong></p>
+      <p><strong>Preprint, 2025</strong> · <a href="https://arxiv.org/abs/2510.10148">arXiv ↗</a></p>
+    </li> -->
+    <li>
+      <h3>Aligning Core Aspects: Improving Vulnerability Proof-of-Concepts via Cross-Source Insights</h3>
+      <p>Lingxiao Wang, Wenjing Dang, Mengyao Zhang, Yue Wang, Xianzong Wu, and <strong>Sen Chen*</strong></p>
+      <p><strong>FSE 2025, CCF-A, Companion</strong> · <a href="https://sen-chen.github.io/pdf/C50-FSE2025-Aligning%20Core%20Aspects%20Improving%20Vulnerability%20Proof-of-Concepts%20via%20Cross-Source%20Insights.pdf">PDF ↗</a></p>
+      <p>33rd ACM International Conference on the Foundations of Software Engineering · 26–27 June 2025 · Trondheim, Norway · pp. 1774–1777</p>
+    </li>
+    <li>
+      <h3>PatchFinder: A Two-Phase Approach to Security Patch Tracing for Disclosed Vulnerabilities in Open-Source Software</h3>
+      <p>Kaixuan Li, Jian Zhang, <strong>Sen Chen</strong>, Han Liu, Yang Liu, and Yixiang Chen</p>
+      <p><strong>ISSTA 2024, CCF-A</strong> · <a href="https://sen-chen.github.io/pdf/C47-ISSTA2024-PatchFinder%20A%20Two-Phase%20Approach%20to%20Security%20Patch%20Tracing%20for%20Disclosed%20Vulnerabilities%20in%20Open-Source%20Software.pdf">PDF ↗</a></p>
+      <p>ACM SIGSOFT International Symposium on Software Testing and Analysis · 16–20 September 2024 · Vienna, Austria · pp. 590–602</p>
+    </li>
+    <li>
+      <h3>Detecting and Augmenting Missing Key Aspects in Vulnerability Descriptions</h3>
+      <p>Hao Guo, <strong>Sen Chen*</strong>, Zhenchang Xing, Xiaohong Li, Yude Bai, and Jiamou Sun</p>
+      <p><strong>TOSEM 2022, CCF-A</strong> · <a href="https://sen-chen.github.io/pdf/J11-TOSEM2021-Detecting%20and%20Augmenting%20Missing%20Key%20Aspects%20in%20Vulnerability%20Descriptions.pdf">PDF ↗</a></p>
+    </li>
+  </ul>
+</section>
+</main><footer><a href="https://nksseclab.github.io/">NKSSecLab</a><span>研究数据展示 · 2026</span></footer><script src="app.js"></script></body></html>
